@@ -1,0 +1,112 @@
+body{
+    background-color: rgb(53, 148, 65);
+    color:white;
+    font-family: Verdana;
+font-size: 2rem;
+min-height : 10vh; }
+h1{
+text-align: center; }
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height : 70vh;
+} #game{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:200px;
+}
+.character_card{
+    display:flex;
+    gap : 20px;
+    align-items: center;
+}
+/* Style de design des balises */
+button{
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding : 1rem;
+    border:none;
+    background-color: rgb(230, 233, 72);
+    color:rgb(7, 37, 8);
+    font-weight: bold; }
+
+    
+button:active{
+scale: 0.90; }
+
+
+
+/* Style d'animation */
+img{
+    max-height : 200px;
+    transition: scale 0.25s;
+}
+
+.attaquer {
+    transform: scale(1.25); /* Zoom de 25% */
+}
+
+
+#ennemy img {
+    transform: rotateY(180deg); /* Modifie la rotation pour faire tourner l'image vers la gauche */
+
+}
+
+#ennemy .attaquer{
+    transform: scaleX(-3.25); /* Zoom de 25% avec inversion horizontale */
+
+
+}
+
+    /*/////////////////// ANIMER LE SOIN DU HERO /////////////////////////////*/
+
+
+    
+    @keyframes healAnimation {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      
+      .heal-circle {
+        top: calc(28% - 10px); /* Positionner le cercle au centre verticalement */
+        left: calc(28% - 10px); /* Positionner le cercle au centre horizontalement */
+
+
+        position: absolute;
+        border-radius: 100%;
+        width: 200px;
+        height: 400px;
+        background-color: lightgreen;
+        animation: healAnimation 1s ease;
+      }
+      
+       /*/////////////////// ANIMER LE SOIN De L'ENNEMIE /////////////////////////////*/
+
+      @keyframes healAnimation {
+        0% { background-color: white; }
+        10% { background-color: rgb(116, 235, 107);  }
+        20% { background-color:  white; }
+        30% { background-color: rgb(60, 164, 128); }
+        40% { background-color: rgb(166, 222, 176); }
+        60% { background-color: white; }
+        50% { background-color: rgb(251, 251, 251); }
+        60% { background-color: white; }
+
+        100% { background-color: white; }
+      }
+      
+      .heal {
+        animation: healAnimation 1s ease;
+      }
+      
