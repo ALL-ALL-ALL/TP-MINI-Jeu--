@@ -43,6 +43,7 @@ const hero = {
   }; // FIN let ennemie 
 
 
+  
 //fond jaunne et rouge la bannier 
 const balise= document.querySelector("h1");
 balise.style.background = 'yellow';
